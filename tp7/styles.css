@@ -1,0 +1,92 @@
+/* Fuente general */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 20px;
+  background: #f5f5f5;
+}
+
+
+
+/* EJERCICIO 1 - Grid básico */
+.grid-ej1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100px 100px;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.grid-ej1 div {
+  background: #dce775;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #999;
+}
+
+/* EJERCICIO 2 - Grid con áreas */
+.grid-ej2 {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar content"
+    "footer footer";
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 60px 150px 50px;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.grid-ej2 .header { grid-area: header; background: #ff8a65; }
+.grid-ej2 .sidebar { grid-area: sidebar; background: #4fc3f7; }
+.grid-ej2 .content { grid-area: content; background: #aed581; }
+.grid-ej2 .footer { grid-area: footer; background: #ba68c8; }
+.grid-ej2 div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+}
+
+/* EJERCICIO 3 - Alineación */
+.grid-ej3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.grid-ej3 .item {
+  background: #81d4fa;
+  padding: 20px;
+}
+.grid-ej3 .especial {
+  justify-self: start;
+  align-self: start;
+  background: #ffcc80;
+}
+
+/* EJERCICIO 4 - Grid con líneas */
+.grid-ej4 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 100px 100px;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.grid-ej4 .box {
+  background: #a1887f;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.grid-ej4 .box2 {
+  grid-column: span 2;
+  background: #f48fb1;
+}
+.grid-ej4 .box3 {
+  grid-row: span 2;
+  background: #7986cb;
+}
+

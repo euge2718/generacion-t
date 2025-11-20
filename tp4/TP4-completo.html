@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TP4 - Ejercicios de Selectores y Pseudo-selectores</title>
+  <!DOCTYPE html>
+  <style>
+    /* Ejercicio 1 */
+    #especial { background-color: lightblue; }
+    .contenedor #especial { background-color: lightgreen; }
+    section > .contenedor > #especial { background-color: yellow; }
+    div[id="especial"] { background-color: orange; }
+    *[id="especial"] { background-color: pink; }
+
+    /* Ejercicio 2 */
+    .lista-items li:nth-child(even) {
+      background-color: #e0e0e0;
+    }
+
+    /* Ejercicio 3 */
+    p::first-letter {
+      font-size: 150%;
+      color: red;
+    }
+
+    button:hover {
+      background-color: lightyellow;
+    }
+
+    input:focus {
+      border: 2px solid blue;
+    }
+
+    ::selection {
+      background-color: lightgreen;
+      color: black;
+    }
+
+    /* Ejercicio 5 */
+    .destacado {
+      color: darkred;
+    }
+
+    /* Ejercicio 6 */
+    article p:first-of-type {
+      font-weight: bold;
+    }
+
+    /* Ejercicio 7 */
+    .padre > div {
+      border: 2px solid blue;
+    }
+
+    /* Ejercicio 8 */
+    .lista-ordenada li:last-child {
+      font-size: 20px;
+    }
+
+    /* Ejercicio 9 */
+    a:not([target="_blank"]) {
+      text-decoration: underline;
+    }
+
+    /* Ejercicio 10 */
+    article p {
+      line-height: 1.8;
+    }
+
+    /* Ejercicio 11 */
+    h2 span {
+      color: purple;
+    }
+
+    /* Ejercicio 12 */
+    img[alt] {
+      border: 2px solid black;
+      
+    }
+
+    /* Ejercicio 13 */
+    .lista-desordenada li:nth-child(3) {
+      font-style: italic;
+    }
+
+    /* Ejercicio 14 */
+    table tr:nth-child(odd) {
+      background-color: #f9f9f9;
+    }
+
+    /* Ejercicio 15 */
+    .clase1.clase2 {
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Ejercicio 16 */
+    button:hover {
+      background-color: #ffefc4;
+    }
+
+    /* Ejercicio 17 */
+    form input[type="text"] {
+      border: 2px solid green;
+    }
+
+    /* Ejercicio 18 */
+    h3 + p {
+      color: teal;
+    }
+
+    /* Ejercicio 19 */
+    a:visited {
+      opacity: 0.6;
+    }
+
+    /* Ejercicio 20 */
+    p strong {
+      color: orange;
+    }
+
+    /* Ejercicio 21 */
+    input:disabled {
+      background-color: #ccc;
+    }
+
+    /* Ejercicio 22 */
+    nav li {
+      margin-bottom: 10px;
+    }
+
+    /* Ejercicio 23 */
+    [class*="importante"] {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>TP4: Ejercicios de Selectores y Pseudo-selectores</h1>
+</header>
+
+<!-- Ejercicio 1: Encontrar 5 maneras distintas de seleccionar el elemento con id #especial y aplicarle un color de fondo distinto en cada caso. --> <section id="ejercicio1"> 
+<h2>Ejercicio 1: Elemento con id <code>#especial</code></h2> 
+<div class="contenedor"> 
+<div id="especial">Elemento Especial. Espero y este bien echo.</div> 
+</div> 
+</section> 
+<!-- Ejercicio 2: Seleccionar todos los elementos pares de una lista con clase .lista-items y cambiar su color de fondo. --> 
+<section id="ejercicio2">
+<h2>Ejercicio 2: Lista de compras<code>.lista-items</code></h2> <ul class="lista-items"> 
+<li>1k de tomate</li> 
+<li>2 de pollo</li> 
+<li>una bolsa de papa</li>
+<li>1/2 de lechuga</li> 
+<li>Item 5</li> 
+<li>Item 6</li> 
+</ul> 
+</section> 
+<!-- Ejercicio 3: Utilizar pseudo-clases y pseudo-elementos para modificar la apariencia de elementos específicos. --> 
+<section id="ejercicio3"> 
+<h2>Ejercicio 3: Pseudo-clases y Pseudo-elementos</h2> 
+<p>Observa la primera letra de este párrafo para ver el efecto <code>::first-letter</code>.</p> 
+<button>Hover sobre mí</button> 
+<form> 
+<input type="text" placeholder="Enfócate en este input"> 
+<input type="checkbox" checked> Checkbox 
+</form> 
+<p>Selecciona parte de este texto para ver el efecto 
+<code>::selection</code>.</p> 
+<a href="https://www.youtube.com/">Enlace de prueba</a> 
+</section> 
+<!-- Ejercicio 4: Pseudo-selectores, asegurándose de aplicar un estilo visible en cada caso. --> 
+<section id="ejercicio4"> 
+<h2>Ejercicio 4: Pseudo-selectores adicionales</h2> 
+<p>Pasa el cursor sobre este botón y enfoca el input para ver los cambios.</p> 
+<button>Otro botón</button> 
+<form> 
+<input type="text" placeholder="Otro input"> 
+</form> 
+</section> 
+<!-- Ejercicio 5: Seleccionar todos los elementos con la clase .destacado y cambiar su color de texto. --> 
+<section id="ejercicio5"> 
+<h2>Ejercicio 5: Elementos con clase <code>.destacado</code></h2> <p class="destacado">Este párrafo es destacado.</p> 
+</section> 
+<!-- Ejercicio 6: Seleccionar el primer párrafo de cada sección y aplicarle una negrita. --> 
+<section id="ejercicio6"> 
+<h2>Ejercicio 6: Primer párrafo de la sección</h2> 
+<article>
+<p>Este es el primer párrafo, que debería aparecer en negrita.</p> <p>Este es el segundo párrafo.</p> 
+</article> 
+</section> 
+<!-- Ejercicio 7: Seleccionar todos los div que sean hijos directos de otro div y ponerles un borde. --> 
+<section id="ejercicio7"> 
+<h2>Ejercicio 7: Divs hijos directos</h2> 
+<div class="padre"> 
+<div>Hijo 1</div> 
+<div>Hijo 2</div> 
+<span>No es un div</span> 
+<div>Hijo 3</div> 
+</div> 
+</section> 
+CLASE 2
+<!-- Ejercicio 8: Seleccionar el último elemento de una lista ordenada y cambiar su tamaño de fuente. --> 
+<section id="ejercicio8"> 
+<h2>Ejercicio 8: Último elemento de una lista ordenada</h2> 
+<ol class="lista-ordenada"> 
+<li>Elemento 1</li> 
+<li>Elemento 2</li> 
+<li>Elemento 3</li> 
+<li>Elemento 4</li> 
+</ol> 
+</section> 
+<!-- Ejercicio 9: Seleccionar todos los enlaces que no tengan el atributo target="_blank" y subrayarlos. --> 
+<section id="ejercicio9"> 
+<h2>Ejercicio 9: Enlaces sin target="_blank"</h2> 
+<a href="https://www.google.com">Google (sin target)</a> 
+<a href="https://www.facebook.com" target="_blank">Facebook (con target)</a> </section> 
+<!-- Ejercicio 10: Seleccionar todos los párrafos dentro de un article y cambiar su interlineado. --> 
+<section id="ejercicio10"> 
+<h2>Ejercicio 10: Párrafos en un article</h2> 
+<article> 
+<p>Párrafo 1 en el artículo.</p> 
+<p>Párrafo 2 en el artículo.</p> 
+</article> 
+</section> 
+<!-- Ejercicio 11: Seleccionar cualquier h2 que tenga un span dentro y cambiar su color. --> 
+<section id="ejercicio11"> 
+<h2>Ejercicio 11: H2 con un span</h2>
+<h2>Título <span>destacado</span></h2> 
+</section> 
+<!-- Ejercicio 12: Seleccionar todas las imágenes que tengan un alt definido y agregarles un borde. --> 
+<section id="ejercicio12"> 
+<h2>Ejercicio 12: Imágenes con alt definido</h2> 
+<img src="lavaropa1.png" alt="Imagen de ejemplo" > 
+</section> 
+<!-- Ejercicio 13: Seleccionar el tercer elemento de una lista desordenada y ponerle cursiva. --> 
+<section id="ejercicio13"> 
+<h2>Ejercicio 13: Tercer elemento de una lista desordenada</h2> <ul class="lista-desordenada"> 
+<li>Elemento A</li> 
+<li>Elemento B</li> 
+<li>Elemento C</li> 
+<li>Elemento D</li> 
+</ul> 
+</section> 
+<!-- Ejercicio 14: Seleccionar todos los elementos impares de una tabla y cambiar su color de fondo. --> 
+<section id="ejercicio14"> 
+<h2>Ejercicio 14: Filas impares en una tabla</h2> 
+<table border="1"> 
+<tr><td>Fila 1</td></tr> 
+<tr><td>Fila 2</td></tr> 
+<tr><td>Fila 3</td></tr> 
+<tr><td>Fila 4</td></tr> 
+</table> 
+</section> 
+<!-- Ejercicio 15: Seleccionar cualquier div que tenga al menos dos clases y aplicarle una sombra. --> 
+<section id="ejercicio15"> 
+<h2>Ejercicio 15: Div con dos o más clases</h2> 
+<div class="clase1 clase2">Div con múltiples clases</div> 
+</section> 
+CLASE 3
+<!-- Ejercicio 16: Seleccionar los button cuando el usuario pase el cursor sobre ellos y cambiar su color de fondo. --> 
+<section id="ejercicio16"> 
+<h2>Ejercicio 16: Botón con efecto hover</h2> 
+<button>Hover sobre mí</button> 
+</section> 
+<!-- Ejercicio 17: Seleccionar los input de tipo text dentro de un form y cambiar su borde. --> 
+<section id="ejercicio17">
+<h2>Ejercicio 17: Inputs de tipo text en un form</h2> 
+<form> 
+<input type="text" placeholder="Input de texto"> 
+<input type="password" placeholder="Contraseña"> 
+</form> 
+</section> 
+<!-- Ejercicio 18: Seleccionar cualquier p que siga inmediatamente a un h3 y cambiar su color. --> 
+<section id="ejercicio18"> 
+<h2>Ejercicio 18: Párrafo inmediatamente después de un H3</h2> <h3>Título H3</h3> 
+<p>Párrafo que sigue inmediatamente a un H3.</p> 
+</section> 
+<!-- Ejercicio 19: Seleccionar los enlaces cuando el usuario ya los haya visitado y hacerlos más opacos. --> 
+<section id="ejercicio19"> 
+<h2>Ejercicio 19: Enlaces visitados</h2> 
+<a href="https://www.netflix.com">Enlace de ejemplo</a> 
+</section> 
+<!-- Ejercicio 20: Seleccionar todos los elementos strong dentro de un p y cambiar su color. --> 
+<section id="ejercicio20"> 
+<h2>Ejercicio 20: Elementos <code>strong</code> dentro de un párrafo</h2> <p>Este párrafo contiene un <strong>texto fuerte</strong> para resaltar.</p> </section> 
+<!-- Ejercicio 21: Seleccionar cualquier input que esté deshabilitado y ponerlo en color gris. --> 
+<section id="ejercicio21"> 
+<h2>Ejercicio 21: Input deshabilitado</h2> 
+<form> 
+<input type="text" placeholder="Activo"> 
+<input type="text" placeholder="Deshabilitado" disabled> 
+</form> 
+</section> 
+<!-- Ejercicio 22: Seleccionar todos los li dentro de un nav y cambiar su espaciado. --> 
+<section id="ejercicio22"> 
+<h2>Ejercicio 22: Items dentro de un nav</h2> 
+<nav> 
+<ul> 
+<li>Inicio</li> 
+<li>Servicios</li> 
+<li>Contacto</li> 
+</ul> 
+</nav> 
+</section>
+<!-- Ejercicio 23: Seleccionar todos los elementos que contengan la palabra "importante" en su clase y resaltarlos en negrita. --> 
+<section id="ejercicio23"> 
+<h2>Ejercicio 23: Elementos con 'importante' en la clase</h2> <p class="nota-importante">Este párrafo contiene información importante.</p> </section> 
+</body>
+</body>
+</html>

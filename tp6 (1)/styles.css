@@ -1,0 +1,113 @@
+/* Estilo base para todas las cajas */
+.item {
+  background-color: deepskyblue;
+  color: white;
+  padding: 20px;
+  margin: 5px;
+  text-align: center;
+  border-radius: 10px;
+  
+}
+
+/* Ejercicio 1 */
+
+.ej1-contenedor {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.item img {
+  width: 100px;  /* ajustá el tamaño según necesites */
+  height: 100px;
+  object-fit: cover; /* recorta sin deformar */
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+
+/* Ejercicio 2 */
+.ej2-contenedor {
+  display: flex;
+  flex-direction: row-reverse; /* probé con column también */
+  flex-wrap: wrap;
+  gap: 10px;
+  background-color: #f0f0f0;
+}
+
+/* Ejercicio 3 */
+.ej3-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-between;
+  height: 250px;
+  background-color: #ddd;
+}
+
+/* Ejercicio 4 */
+.ej4-contenedor {
+  display: flex;
+  height: 150px;
+  background-color: #ccc;
+}
+
+.item-especial {
+  order: -1;
+  flex-grow: 2;
+  align-self: flex-end;
+  background-color: darkorange;
+}
+
+/* Ejercicio 5 */
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  border: 2px solid #000;
+}
+
+header, footer {
+  background-color: #999;
+  padding: 15px;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  flex: 1;
+}
+
+aside {
+  width: 200px;
+  background-color: #bbb;
+  padding: 10px;
+}
+
+section {
+  flex: 1;
+  background-color: #eee;
+  padding: 10px;
+}
+
+.img-float {
+  float: left;
+  margin-right: 15px;
+  width: 125px;
+  height: 125px;
+  border-radius: 10px;
+}
+
+.bloque {
+  display: flex;              /* imagen y texto en paralelo */
+  align-items: center;        /* centrados verticalmente */
+  gap: 20px;                  /* espacio entre imagen y texto */
+  background-color: #f5f5f5;  /* color suave de fondo */
+  margin-bottom: 25px;        /* espacio entre cada bloque */
+  padding: 15px;              /* margen interno del bloque */
+  border-radius: 10px;        /* bordes suaves */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* ligera sombra */
+}
+

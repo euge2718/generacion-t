@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Adopción</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <h1>Formulario de Adopción de Perros</h1>
+  <form action="https://formspree.io/f/mwpavgab" method="POST">
+
+    <fieldset>
+      <legend>Datos del Responsable</legend>
+
+      <label for="nombre">Nombre completo:</label>
+      <input type="text" id="nombre" name="nombre" required minlength="3">
+
+      <label for="edad">Edad:</label>
+      <input type="number" id="edad" name="edad" required min="18" max="90">
+
+      <label for="sexo">Sexo:</label>
+      <select id="sexo" name="sexo" required>
+        <option value="">Seleccionar…</option>
+        <option value="masculino">Masculino</option>
+        <option value="femenino">Femenino</option>
+        <option value="otro">Otro</option>
+      </select>
+
+      <label for="direccion">Dirección:</label>
+      <input type="text" id="direccion" name="direccion" required>
+
+      <label for="casa o departamento">Casa o Departamento:</label>
+      <select name="casa o depto" id="casa o depto">
+      <option value="Seleccionar…">Seleccionar…</option>
+      <option value="casa">casa</option>
+      <option value="departamento ">departamento</option>
+      </select>
+
+      <label for="piso">piso:</label>
+      <input type="text" id="piso" name="piso" >
+
+      <label for="n° depto">numero del Departamento:</label>
+      <input type="text" id="n° depto" name="n° depto" >
+
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" required pattern="[0-9]{10}">
+
+      <label for="mail">Mail: </label>
+      <input type="text" id="mail" name="mail" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+      
+    </fieldset>
+
+    <fieldset>
+      <legend>Sobre su Hogar</legend>
+
+      <label for="cantidad_animales">¿Tiene otros animales?</label>
+      <select id="cantidad_animales" name="cantidad_animales" required>
+        <option value="no">No</option>
+        <option value="si, 1 o 2">Sí, 1 o 2</option>
+        <option value="2 o 3">2 o 3</option>
+        <option value="4 o 5">4 o 5</option>
+        <option value="6 o más">6 o más</option>
+      </select>
+
+      <label for="tipo_animales">¿Qué tipo de animales?</label>
+      <select id="tipo_animales" name="tipo_animales" required>
+        <option value="Seleccionar…">Seleccionar…</option>
+        <option value="perros">Perros</option>
+        <option value="gatos">Gatos</option>
+        <option value="perros y gatos">Perros y Gatos</option>
+        <option value="aves">aves</option>
+        <option value="conejo">Conejo</option>
+        <option value="hamster">Hamster</option>
+        <option value="huron">huron</option>
+        <option value="tortuga">Tortuga</option>
+        <option value="otro">otro</option>
+        </select>
+
+      <label for="hijos">¿Tiene hijos?</label>
+      <select id="hijos" name="hijos" required>
+        <option value="Seleccionar…">Seleccionar…</option>
+        <option value="si">Sí</option>
+        <option value="no">No</option>
+      </select>
+
+      <label for="patio">¿Tiene patio?</label>
+      <select id="patio" name="patio" required>
+        <option value="Seleccionar…">Seleccionar…</option>
+        <option value="si">Sí</option>
+        <option value="no">No</option>
+      </select>
+
+    </fieldset>
+
+    <fieldset>
+      <legend>Preferencias de Adopción</legend>
+
+      <label for="adoptar_animal">¿Qué animal desea adoptar?</label>
+      <input type="text" id="adoptar_animal" name="adoptar_animal" required>
+
+      <label for="horario_adopcion">Horario preferido para la cita: que sea entre las 10am a 13 pm y 14pm a 18pm.</label>
+      <input type="time" id="horario_adopcion" name="horario_adopcion" required>
+
+      <label for="mensaje">Explique por qué desea adoptar:</label>
+      <textarea id="mensaje" name="mensaje" rows="4" required minlength="10"></textarea>
+    </fieldset>
+
+    <button type="submit">Enviar Formulario</button>
+  </form>
+</body>
+</html>
+

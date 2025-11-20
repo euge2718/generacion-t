@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>TP N°11 Flores Eugenia</title>
+  <style>
+    body {
+      font-family: "Space Grotesk", Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      margin: 40px;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    h1 {
+      text-align: center;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 10px;
+    }
+    pre {
+      background-color: #f0f0f0;
+      padding: 10px;
+      border-left: 5px solid #ccc;
+      overflow-x: auto;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+<body>
+  <h1>TP N°11 Respuestas - Flores Eugenia</h1>
+
+  <section>
+    <h2>💡 Fase 1: Teoría — Coerción, tipos, variables, operadores</h2>
+    <ol>
+      <!--1-->
+      <li><b>¿Qué devuelve cada expresión?</b>
+        <p>Explicación: se hacen conversiones automáticas. </p>
+        <pre>console.log("5" + 3); → "53"</pre>
+        <p>el operador + cuando tiene un string y un número, convierte el número a string (coerción implícita) y hace una concatenación, no una suma.</p>
+        <pre>console.log("5" - 3); → 2</pre>
+        <p>Acá el operador - siempre intenta hacer una operación matemática, así que convierte "5" a número. Conversión implícita a número. </p>
+        <pre>console.log(true + 1); → 2</pre>
+        <p>True vale 1 entonces se suman, Conversión implícita de booleano a número.</p>
+        <pre>console.log(null + 5); → 5</pre>
+        <p>null cuando se usa en una operación matemática se convierte en 0. Conversión implícita de null a número.</p>
+        <pre>console.log(undefined + 1); → NaN </pre>
+        <p>undefined no puede convertirse a un número válido, entonces la operación da como resultado NaN, que significa “Not a Number”.</p>
+      </li>
+      <br>
+      <!--2-->
+      <li><b>Convertir valores para sumar correctamente:</b><br>
+        <pre>Number("15") + 30 → 45</pre>
+        si se intentara sumar "15" + 30 directamente, se tomaria como una concatenacion por que "15" es un string, asi que el resultado seria 1530. para sumarlo correctamente tendriamos que convertir el string "15" a número.
+
+        <pre>true + false = 1 + 0 → 1</pre>
+        <p>"true" vale 1 y "false" vale 0, esto es así ya que representan verdadero y falso como números.</p>
+      </li>
+      <br>
+      <!--3-->
+      <li><b>¿Qué hay en la variable a?</b><br>
+        <pre>a = console.log("jorge")</pre>
+        <p>Esta muestra "jorge" en consola y a como console.log no tiene retorno devuelve <B>undefined</B>.</p>
+      </li>
+      <br>
+      <!--4-->
+      <li><b>Tipos de operadores:</b>
+        <ul>
+          <li>Aritméticos: son los que se usa para realizar cálculos matemáticos (+, -, *, /, %)</li>
+          <li>Lógicos: se usan para combinar o invertir expresiones booleanas, evaluando y devolviendo true o false. Ejem: 5 === "5" → false (&&, ||, !)</li>
+          <li>Relacionales:comparan valores e indican si una condicion se cumple, devuelven true o false (>, <, >=, <=, ==, ===, !=, !==)</li>
+          <li>De asignación: sirve para asignar o actualizar valores en una variable. Ej: x += 2 equivale a x = x + 2 (=, +=, -=, *=, /=, %=)</li>
+        </ul>
+      </li>
+      <br>
+      <!--5-->
+      <li><b>¿Que hace el siguiente codigo?</b><br>
+        <pre>while (true) {
+  console.log("el resultado es:");
+}
+console.log(3);</pre>
+        <p>El while (true) crea un bucle infinito y nunca termina, porque la condición while es true,
+             y true es verdadero, osea que el ciclo no tiene forma de salir,
+          entonces dentro del bucle se ejecuta infinitamente console.log("el resultado es:").
+          La línea console.log(3); nunca llega a ejecutarse, porque el bucle nunca termina, queda atrapado en el while. Como resultado
+          en la consola se repite sin parar el mensaje "el resultado es:" hasta que se detiene el programa manualmente.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>🚦 Fase 2: Estructuras de control - if / else / else if</h2>
+    <ol start="6">
+      <!--6-->
+      <li><b>Función de semáforo:</b>
+        <pre>
+            Función semaforo(color) {
+            if (color === "verde") {
+                return "avanzar";
+            } else if (color === "amarillo") {
+                return "precaucion";
+            } else if (color === "rojo") {
+                return "detenerse";
+            } else { 
+                return "color no valido";
+            }
+            }
+        </pre>
+      </li>
+
+      <!--7-->
+      <li><b>Función de temperatura:</b>
+        <pre>
+            funcion detectordeTemperatura(tempe) {
+                if (tempe < 0) {
+                    return "Frío extremo";
+                } else if (temp >= 0 && temp <= 15) {
+                    return "Frío";
+                } else if (temp >= 16 && temp <= 30) {
+                    return "Agradable";
+                } else {
+                    return "Calor";
+                } 
+            }
+        </pre>
+      </li>
+
+      <!--8-->
+      <li><b>El código más prolijo:</b>
+        <pre>
+            if (edad >= 18 && edad < 65 && edad % 2 === 0) {
+                console.log("Sos un adulto par");
+            } else if (edad < 18 && edad % 2 !== 0) {
+                console.log("Sos un menor impar");
+            }
+        </pre>
+      </li>
+
+      <!--9-->
+      <li><b>Saludo según la hora:</b>
+        <pre>
+            funcion saludoSegunHora() {
+                let d = new Date()
+                let hora = d.getHours()
+
+                if (hora >= 6 && hora <= 12) {
+                    console.log("Buen día")
+                } else if (hora >= 13 && hora <= 19) {
+                    console.log("Buenas tardes")
+                } else {
+                    console.log("Buenas noches")
+                }
+            }
+        </pre>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>🔁 Fase 3: While, contadores y acumuladores</h2>
+    <ol start="10">
+      <!--10-->
+      <li><b>10 números aleatorios y promedio:</b>
+        <pre>
+            funcion generarNumerosYPromedio() {
+                let contador = 0
+                let acumulador = 0
+
+                console.log("Números generados:")
+
+                while (contador < 10) {
+                    let numero = Math.floor(Math.random() * 100) + 1
+                    console.log(numero)
+
+                    acumulador += numero
+                    contador++
+                }
+
+                let promedio = acumulador / 10
+                console.log("Promedio:", promedio)
+            }
+        </pre>
+      </li>
+
+      <!--11-->
+      <li><b>Contador de frases:</b>
+        <pre>
+            funcion contadorDeFrases() {
+                let frase = "";     
+                let contador = 0;
+
+                while (frase !== "FIN") {
+                    frase = prompt("Ingresá una frase (escribí FIN para terminar):"); 
+
+                    if (frase !== "FIN") {
+                        contador++; 
+                    }
+                }
+
+                console.log("Cantidad de frases ingresadas:", contador);
+            }
+        </pre>
+      </li>
+
+      <!--12-->
+      <li><b>Cargador de energía:</b>
+        <pre>
+            funcion cargadorDeEnergia() {
+                let energia = 0;
+                let ciclos = 0;
+
+                while (energia < 100) {
+                    let aumento = Math.floor(Math.random() * 10) + 1; 
+                    energia += aumento;
+                    ciclos++;
+                }
+
+                console.log("Energía final cargada:", energia);
+                console.log("Cantidad de ciclos necesarios:", ciclos);
+            }
+        </pre>
+      </li>
+
+      <!--13-->
+      <li><b>Matriz 3x3:</b>
+        <pre>
+            funcion matriz3x3() {
+                let fila = 0;
+
+                while (fila < 3) {
+                    let columna = 0;
+
+                    while (columna < 3) {
+                        console.log("Fila: " + fila + " - Columna: " + columna);
+                        columna++;
+                    }
+
+                    fila++;
+                }
+            }
+        </pre>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>📊 Fase 4: For e iteración de arrays</h2>
+    <ol start="14">
+      
+      <!--14-->
+      <li><b>Recorrer array:</b>
+        <pre>
+            const temperaturas = [25, 30, 10, 3, 9, 20, 22, 15, 18, 20, 22];
+
+            let contadorMayores = 0;
+
+            for (let i = 0; i < temperaturas.length; i++) {
+                console.log("Temperatura:", temperaturas[i]);
+
+                if (temperaturas[i] > 25) {
+                    contadorMayores++;
+                }
+            }
+
+            console.log("Cantidad de temperaturas mayores a 25°:", contadorMayores);
+        </pre>
+      </li>
+
+      <!--15-->
+      <li><b>Arrays paralelos:</b>
+        <pre>
+            const dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+            const temperaturas = [22, 25, 20, 18, 30, 28, 26];
+
+            for (let i = 0; i < dias.length; i++) {
+                console.log(dias[i] + ": " + temperaturas[i] + "°C");
+            }
+        </pre>
+      </li>
+
+      <!--16-->
+      <li><b>Suma de 3 arrays:</b>
+        <pre>
+            const array1 = [56, 4, 3];
+            const array2 = [4, 33, 64];
+            const array3 = [7, -23, 9];
+
+            let total = 0;
+
+            const listaDeArrays = [array1, array2, array3];
+
+            for (let i = 0; i < listaDeArrays.length; i++) {
+                for (let j = 0; j < listaDeArrays[i].length; j++) {
+                    total += listaDeArrays[i][j];
+                }
+            }
+
+            console.log("El total final es: " + total);
+        </pre>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>🧩 Fase 5: Funciones</h2>
+    <ol start="17">
+      <!--17-->
+      <li><b>Conversión °C ↔ °F:</b>
+        <pre>
+            // funcion para convertir de C° a F°
+            function celsiusAFahrenheit(c) {
+                return (c * 9/5) + 32;
+            }
+
+            //ejemplos de conversion de C° a F°
+            console.log("20°C a °F =", celsiusAFahrenheit(20));   // devuelve: (20°C → 68°F)
+            console.log("0°C a °F =", celsiusAFahrenheit(0));     // devuelve: (0°C → 32°F)
+            console.log("100°C a °F =", celsiusAFahrenheit(100)); // devuelve: (100°C → 212°F)
+
+            //funcion para convertir de F° a C°
+            function fahrenheitACelsius(f) {
+                return (f - 32) * 5/9;
+            }
+
+            //ejemplos de conversion de F° a C°
+            console.log("32°F a °C =", fahrenheitACelsius(32));   // devuelve:(32°F → 0°C)
+            console.log("68°F a °C =", fahrenheitACelsius(68));   // devuelve:(68°F → 20°C)
+            console.log("212°F a °C =", fahrenheitACelsius(212)); // devuelve:(212°F → 100°C  )
+
+        </pre>
+      </li>
+
+      <!--18-->
+      <li><b>Promedio de un array:</b>
+        <pre>
+            function promedioArray(arr) {
+                let suma = 0;
+
+                for (let i = 0; i < arr.length; i++) {
+                    suma += arr[i];
+                }
+
+                let promedio = suma / arr.length;
+                return promedio;
+            
+        }
+
+        //ejemplo
+        const numeros = [10, 20, 30, 40, 50];
+
+        console.log("El promedio es:", promedioArray(numeros));
+
+        </pre>
+      </li>
+
+      <!--19-->
+      <li><b>Buscar valor en array:</b>
+        <pre>
+            function buscarValor(arr, valor) {
+                for (let i = 0; i < arr.length; i++) {
+                    if (arr[i] === valor) {
+                        return true;
+                    }
+                }
+                return false;
+            }   
+            // Ejemplo
+            const numeros = [5, 12, 8, 130, 44];
+
+            console.log(buscarValor(numeros, 12)); // true
+            console.log(buscarValor(numeros, 99)); // false
+</pre>
+      </li>
+
+      <!--20-->
+      <li><b>Función nombre y edad:</b>
+        <pre>
+            function saludoPersonal(nombre, edad) {
+                return "Hola, " + nombre + ". Tenés " + edad + " años.";
+            }
+
+            //ejemplo
+            console.log(saludoPersonal("Juan", 25));
+            //devolucion: Hola, Juan. Tenés 25 años.
+
+        </pre>
+      </li>
+
+      <!--21-->
+      <li><b>Función mostrarNombres:</b>
+        <pre>
+            function mostrarNombres(nombrePrincipal, ...apodos) {
+                return "Nombre: " + nombrePrincipal + " - Apodos: " + apodos.join(", ");
+            }
+
+            console.log(mostrarNombres("Martina", "La Colo", "Tin", "Marty"));
+            //devolucion: Nombre: Martina - Apodos: La Colo, Tin, Marty
+
+
+        </pre>
+      </li>
+    </ol>
+  </section>
+
+</body>
+</html>

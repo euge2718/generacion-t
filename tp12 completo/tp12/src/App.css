@@ -1,0 +1,148 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #d64af9);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #d081d8aa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+:root{
+  --bg: #f6cffb; /* fondo violeta, el más oscuro pero suave */
+  --card: #ffe8fe; /* tarjetas más claras */
+  --primary: #920bd0;
+  --muted: #56256d;
+  --accent: #d97fff;
+  --shadow: 0 6px 18px rgba(11,26,48,0.08);
+  --radius: 10px;
+  --max-width: 1100px;
+  --gutter: 1rem;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* body usa el fondo más oscuro (suave) */
+body {
+  margin: 0;
+  background: var(--bg);
+  color: #0f1724;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* centrar encabezado ya aplicado; aseguramos que el título de la grilla esté encima y centrado */
+.grilla {
+  background: transparent;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centra el título */
+}
+
+.grilla h3 {
+  margin: 0 0 1rem 0;
+  color: var(--primary);
+  font-size: 1.05rem;
+  text-align: center; /* título centrado encima de la lista */
+  width: 100%;
+}
+
+/* GRID: 3 por fila en escritorio, responsive */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  align-items: stretch;
+  width: 100%; /* que ocupe todo el ancho debajo del título */
+}
+
+/* tarjeta usuario: ahora con paleta azul y texto oscuro para buen contraste */
+.usuario-card{
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: transform .12s ease, box-shadow .12s ease;
+  color: #05233b;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.35rem;
+  border: none;
+  overflow: hidden;
+  background: var(--card);
+}
+
+/* hover */
+.usuario-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 18px 38px rgba(11,26,48,0.14);
+}
+
+/* paleta azul por bloques: tonos más claros que el fondo */
+.cards > .usuario-card:nth-child(3n+1) {
+  background: linear-gradient(135deg, #e8f4ff 0%, #d1ebff 100%);
+}
+.cards > .usuario-card:nth-child(3n+2) {
+  background: linear-gradient(135deg, #dff0ff 0%, #c6e8ff 100%);
+}
+.cards > .usuario-card:nth-child(3n) {
+  background: linear-gradient(135deg, #d6eaff 0%, #bfe0ff 100%);
+}
+
+.usuario-nombre{
+  margin: 0;
+  font-size: 1.02rem;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.usuario-info, .usuario-otro{
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+/* responsive: 2 cols tablet, 1 col móvil */
+@media (max-width: 900px){
+  .cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 520px){
+  .cards { grid-template-columns: 1fr; }
+  .usuario-card { padding: 0.85rem; min-height: 100px; }
+}
